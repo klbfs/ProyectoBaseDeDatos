@@ -10,7 +10,6 @@ import BaseDatos as bd
 class SectorAgricola():
     
     listaArgumentos = ['ubicacion','empresas','asociaciones','tiposDeProductos','empresasExportadoras','rutasDeTransporte','empresasProductoras','empresasVendedoras','promedioProduccion','gastoNatural']
-    
 
     def __init__(self, ubicacion, empresas, asociaciones, tiposDeProducto, empresasExportadoras, rutasDeTransporte, empresasProductoras, empresasVendedoras, promedioProduccion, gastoNatural):
         

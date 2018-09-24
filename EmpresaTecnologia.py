@@ -8,6 +8,13 @@ from BaseDeDatos import BaseDeDatos
 
 class EmpresaTecnologia():
     
+    listaArgumentos = ['nombreEmpresa','descripcion','aportesTecnologicos','productos','publico','departamentos','contacto','redesSociales','ubicacion','tienda']
+    _listarObjetos = []
+
+    @classmethod
+    def listarObjetos(cls, self):
+        cls.listarObjetos.append(self.nombreEmpresa)
+
     def crearBase():
         BaseDeDatos('EmpresaTecnologia',listaArgumentos)
 
