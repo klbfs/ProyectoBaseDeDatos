@@ -11,9 +11,8 @@ class Menu():
 	
     def __correr__(self):
         
-        clases = BaseDeDatos("BaseClases")
         while True:
-            clases.mostrarClases()
+            BaseDeDatos.mostrarDatos('BaseClases')
             clase = input("Nombre de la clase: ", end = '')
             seleccion = funciones.validacion("1)Editar objeto\n 2)Eliminar objeto\n3)Buscar objeto\n4)AgregarObjeto")
             if seleccion == 1:
