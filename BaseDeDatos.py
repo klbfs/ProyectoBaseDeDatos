@@ -16,18 +16,18 @@ class BaseDeDatos():
     
     def transformarArgumentos(argumentos):
         
-        diccionarioConversion = {'int':'INTEGER', 'float':'FLOAT', 'str':'VARCHAR(100)'}
         cadena = ""
         argumentos = []
-        for a in argumentos:
-            argumentos.append(a) 
-            cadena += str(a) + ' ' + diccionarioConversion[str(type(a))] + ' NOT NULL, '
-        return argumentos, cadena
+        for a in range(len(argumentos)-1): 
+            cadena += str(argumentos[a]) + ' VARCHAR(100) NOT NULL, '
+        cadena += str(argumentos[len(cadena)-1]) + ' NOT NULL'
+        return cadena
     
     def __init__(self, nombreBase, argumentos):
         
         self.nombreBase = nombreBase               
-        self.argumentos, sqlTerm = self.transformarArgumentos(argumentos)
+        self.argumentos = argumentos 
+        sqlTerm = self.transformarArgumentos(argumentos)
         self.argumentosDiccionario()
         
         conexion = sqlite3.connect(self.nombreBase+".sqlite3")
