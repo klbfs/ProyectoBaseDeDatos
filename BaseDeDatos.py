@@ -98,7 +98,7 @@ class BaseDeDatos():
         conexion.close()
     
     @classmethod
-    def borrarDatos(cls, base, argumento, dato):
+    def borrarDatos(base, argumento, dato):
         
         conexion = sqlite3.connect(base)
         consulta = conexion.cursor()
@@ -109,8 +109,6 @@ class BaseDeDatos():
         consulta.close()
         conexion.commit()
         conexion.close()
-        
-        del cls.arguBases[base] 
     
     def editarDatos(base, argumento, datoIdentificacion, argumentoCambiado, nuevoDato):
         

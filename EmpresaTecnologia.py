@@ -15,8 +15,8 @@ class EmpresaTecnologia():
     def listarObjetos(cls, self):
         cls.listarObjetos.append(self.nombreEmpresa)
 
-    def crearBase():
-        BaseDeDatos('EmpresaTecnologia',listaArgumentos)
+    def crearBase(self):
+        BaseDeDatos('EmpresaTecnologia',self.listaArgumentos)
 
     def __init__(self):
         

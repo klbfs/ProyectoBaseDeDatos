@@ -6,7 +6,7 @@ Created on Sun Sep 23 13:20:07 2018
 """
 from BaseDeDatos import BaseDeDatos
 from ControladorObjetos import ControladorObjetos
-import funciones
+from funciones import validacionEntera
 
 class Menu():
 	
@@ -15,6 +15,8 @@ class Menu():
         while True:
             BaseDeDatos.mostrarDatos('BaseClases')
             clase = input("Nombre de la clase: ", end = '')
+            #Comprobar existencia de base
+            BaseDeDatos.mostrarDatos(clase)
             seleccion = funciones.validacionEntera("1)Editar objeto\n 2)Eliminar objeto\n3)Buscar objeto\n4)AgregarObjeto", 1,4)
             
             if seleccion == 1:
@@ -29,6 +31,7 @@ class Menu():
                 BaseDeDatos.borrarDatos(clase, 'nombre', nombreObjeto)
                 continue
             
+            #Lista la busqueda
             if seleccion == 3:
                 nombreObjeto = input("Nombre del objeto a buscar")
                 BaseDeDatos.buscarDato(clase,'nombre', nombreObjeto)

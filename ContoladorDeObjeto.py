@@ -23,4 +23,5 @@ class ControladorDeObjeto()
 	def borrarObjeto(self):
 		pass
 
-	def editarObjeto
+	def editarObjeto(self):
+		pass

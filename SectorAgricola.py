@@ -24,5 +24,5 @@ class SectorAgricola():
         self.promedioProduccion = promedioProduccion
         self.gastoNatural = gastoNatural
 
-    def crearBase():
-        bd.BaseDatos('SectorAgricola',listaArgumentos)
+    def crearBase(self):
+        bd.BaseDatos('SectorAgricola',self.listaArgumentos)

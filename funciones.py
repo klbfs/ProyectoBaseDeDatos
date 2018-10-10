@@ -23,7 +23,7 @@ def  validacionEntera(texto, l1, l2):
 def crearBases(bases):
     
     nombresClases = ['SectorAgricola','EmpresaTecnologia']
-    clases = bd.crearBases('BaseClases','nombre')
+    clases = bd.BaseDeDatos('BaseClases','nombre')
     for clase in nombresClases:
         clases.agregarDatos('BaseClases', clase)
         
