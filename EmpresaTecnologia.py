@@ -9,25 +9,48 @@ from BaseDeDatos import BaseDeDatos
 class EmpresaTecnologia():
     
     listaArgumentos = ['nombreEmpresa','descripcion','aportesTecnologicos','productos','publico','departamentos','contacto','redesSociales','ubicacion','tienda']
-    _listarObjetos = []
+    _listaObjetos = []
 
     @classmethod
-    def listarObjetos(cls, self):
-        cls.listarObjetos.append(self.nombreEmpresa)
+    def regresarObjeto(cls, nombreObjeto):
+        for objeto in cls._listaObjetos:
+            if objeto.nombreEmpresa == nombreObjeto:
+                return objeto
+
+    @classmethod
+    def eliminarObjeto(cls, objeto):
+        for objeto in cls._listaObjetos:
+            if objeto == objeto:
+                cls._listaObjetos.remove(objeto)
+    
+    @classmethod
+    def editarArgumento(cls, argumento, objeto, dato):
+        if argumento == 'nombreEmpresa':
+            for obj in cls._listaObjetos:
+                if obj == objeto:
+                    cls._listaObjeto[obj.index()].nombreEmpresa = dato
+
+    @classmethod
+    def listarObjetos(cls, objeto):
+        cls._listaObjetos.append(objeto)
 
     def crearBase(self):
         BaseDeDatos('EmpresaTecnologia',self.listaArgumentos)
 
-    def __init__(self):
+    def __init__(self, modo = None):
         
-        self.nombreEmpresa = input('Nombre de Empresa ', end = '')
-        self.descripcion = input('Descripcion', end = '')
-        self.aportesTecnologicos = input('Aportes Tencologicos ', end = '')
-        self.productos = input('Productos ', end = '')
-        self.publico = input('Publico ', end = '')
-        self.departamentos = input('Departamentos ', end = '')
-        self.contacto = input('Contacto ', end = '')
-        self.redesSociales = input('Redes Sociales ', end = '')
-        self.ubicacion = input('Ubicacion ', end = '')
-        self.tienda = input('Tienda ', end = '')
-        BaseDeDatos.agregarDatos('EmpresaTecnologia', [self.nombreEmpresa,self.descripcion,self.aportesTecnologicos,self.aportesTecnologicos,self.productos,self.publico,self.departamentos,self.contacto,self.redesSociales,self.ubicacion,self.tienda,self])
+        if modo != None:
+            self.nombreEmpresa = input('Nombre de Empresa: ')
+            self.descripcion = input('Descripcion: ')
+            self.aportesTecnologicos = input('Aportes Tencologicos: ')
+            self.productos = input('Productos: ')
+            self.publico = input('Publico: ')
+            self.departamentos = input('Departamentos: ')
+            self.contacto = input('Contacto: ')
+            self.redesSociales = input('Redes Sociales: ')
+            self.ubicacion = input('Ubicacion: ')
+            self.tienda = input('Tienda: ')
+            self.listarObjetos(self)
+            BaseDeDatos.agregarDatos('EmpresaTecnologia: ', [self.nombreEmpresa,self.descripcion,self.aportesTecnologicos,self.aportesTecnologicos,self.productos,self.publico,self.departamentos,self.contacto,self.redesSociales,self.ubicacion,self.tienda,self])
+        else:
+            self.crearBase()

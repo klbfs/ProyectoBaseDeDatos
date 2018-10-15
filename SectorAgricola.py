@@ -4,7 +4,7 @@ Created on Tue Aug 28 21:14:25 2018
 
 @author: yocoy
 """
-import BaseDatos as bd
+import BaseDeDatos as bd
 
 
 class SectorAgricola():

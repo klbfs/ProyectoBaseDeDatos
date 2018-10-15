@@ -3,4 +3,6 @@ import funciones as fc
 
 def main():
 	fc.crearBases()
-	mn.Menu()
+	mn.Menu.correr()
+
+main()

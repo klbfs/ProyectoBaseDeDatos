@@ -11,8 +11,8 @@ import BaseDeDatos as bd
 def  validacionEntera(texto, l1, l2):
     while True:
         try:
-            opcion = int(input(texto), end = '')
-            if texto < l1 and texto > l2:
+            opcion = int(input(texto+ '\n-->'))
+            if opcion < l1 or opcion > l2:
                 print("Opcion no válida, intenta otra vez")
                 continue
             break
@@ -20,12 +20,13 @@ def  validacionEntera(texto, l1, l2):
             print("Opcion no válida, intenta otra vez")
     return opcion
 
-def crearBases(bases):
+def crearBases():
     
     nombresClases = ['SectorAgricola','EmpresaTecnologia']
-    clases = bd.BaseDeDatos('BaseClases','nombre')
+
+    clases = bd.BaseDeDatos('BaseClases',['nombre'])
     for clase in nombresClases:
-        clases.agregarDatos('BaseClases', clase)
+        clases.agregarDatos('BaseClases', [clase])
         
-    sA.SectorAgricola().crearBase()
-    eT.EmpresaTecnologia().crearBase()
+    #sA.SectorAgricola().crearBase()
+    eT.EmpresaTecnologia()
