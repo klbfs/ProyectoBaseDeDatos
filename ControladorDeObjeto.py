@@ -30,11 +30,13 @@ class ControladorDeObjeto():
 
 
     def editarObjeto(clase):
-        
-        nombreObjeto = input("Nombre del objeto a editar: ")
-        argumentoEditar = input("Nombre del argumento a editar: ")
-        nuevoValor = input("Nuevo dato: ")
         if clase == 'EmpresaTecnologia':
+            print('\n\nLista de argumentos')
+            print(EmpresaTecnologia.regresarArgumentos())
+            print('\n')
+            nombreObjeto = input("Nombre del objeto a editar: ")
+            argumentoEditar = input("Nombre del argumento a editar: ")
+            nuevoValor = input("Nuevo dato: ")
             EmpresaTecnologia.editarArgumento(argumentoEditar, EmpresaTecnologia.regresarObjeto(nombreObjeto), nuevoValor)
             BaseDeDatos.editarDatos(clase, 'nombreEmpresa',  nombreObjeto, argumentoEditar, nuevoValor)
        

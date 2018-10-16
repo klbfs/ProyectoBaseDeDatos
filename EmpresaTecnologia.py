@@ -12,6 +12,10 @@ class EmpresaTecnologia():
     _listaObjetos = []
 
     @classmethod
+    def regresarArgumentos(cls):
+        return cls.listaArgumentos
+
+    @classmethod
     def regresarObjeto(cls, nombreObjeto):
         for objeto in cls._listaObjetos:
             if objeto.nombreEmpresa == nombreObjeto:
