@@ -13,14 +13,20 @@ class ControladorDeObjeto():
             #SectorAgricola()
             pass
 
+    def buscaObjeto(clase):
+    	nombreObjeto = input("Nombre del objeto a buscar: ")
+    	if clase == 'EmpresaTecnologia':
+    		BaseDeDatos.buscarDato(clase,'nombreEmpresa', nombreObjeto)
 
     def borrarObjeto(clase):
 
         nombreObjeto = input("Nombre del objeto a eliminar: ")
         if clase == 'EmpresaTecnologia':
-        	EmpresaTecnologia.eliminarObjeto()
-        	
-        BaseDeDatos.borrarDatos(clase,'nombre',nombreObjeto)
+        	BaseDeDatos.borrarDatos(clase,'nombreEmpresa',nombreObjeto)
+        	nombreObjeto = EmpresaTecnologia.regresarObjeto(nombreObjeto)
+        	EmpresaTecnologia.eliminarObjeto(nombreObjeto)
+
+        
 
 
     def editarObjeto(clase):
@@ -29,6 +35,6 @@ class ControladorDeObjeto():
         argumentoEditar = input("Nombre del argumento a editar: ")
         nuevoValor = input("Nuevo dato: ")
         if clase == 'EmpresaTecnologia':
-            EmpresaTecnologia.editarArgumento(argumentoEditar, EmpresaTecnologia.regresarDato(nombreObjeto), dato)
-
-        BaseDeDatos.editarDatos(clase, 'nombre',  nombreObjeto, argumentoEditar, nuevoValor)
+            EmpresaTecnologia.editarArgumento(argumentoEditar, EmpresaTecnologia.regresarObjeto(nombreObjeto), nuevoValor)
+            BaseDeDatos.editarDatos(clase, 'nombreEmpresa',  nombreObjeto, argumentoEditar, nuevoValor)
+       

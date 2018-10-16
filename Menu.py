@@ -13,25 +13,45 @@ class Menu():
     def correr():
         
         while True:
+            salir = validacionEntera('Presiona 1 para salir o 2 para continuar', 1, 2)
+            if salir == 1:
+                break
             BaseDeDatos.mostrarDatos('BaseClases')
-            clase = input("Nombre de la clase: ")
-            #Comprobar existencia de base
-            BaseDeDatos.mostrarDatos(clase)
+            while True:    
+                try:
+                    clase = input("Nombre de la clase: ")
+                    BaseDeDatos.mostrarDatos(clase)
+                    break
+                except:
+                    print('Base no encontrada')
+
             seleccion = validacionEntera("1)Editar objeto\n2)Eliminar objeto\n3)Buscar objeto\n4)AgregarObjeto", 1,4)
             
             if seleccion == 1:
-                ControladorDeObjeto.EditarObjeto(clase)
-                continue
+                try:
+                    ControladorDeObjeto.editarObjeto(clase)
+                    continue
+                except:
+                    print('Error al editar el Objeto,\nrevise el argumento a editar o el nombre del objeto')
             
             if seleccion == 2:
-                ControladorDeObjeto.borrarObjeto(clase)
+                try:
+                    ControladorDeObjeto.borrarObjeto(clase)
+                    continue
+                except:
+                    print("Objeto no encontrado")
             
             #Lista la busqueda
             if seleccion == 3:
-                nombreObjeto = input("Nombre del objeto a buscar")
-                BaseDeDatos.buscarDato(clase,'nombre', nombreObjeto)
-                continue
-            
+                try: 
+                    ControladorDeObjeto.buscaObjeto(clase)
+                    continue
+                except:
+                    print('Objeto no encontrado, revisa el nombre')
+
             if seleccion == 4:
-                ControladorObjetos.crearObjeto(clase)
-                continue
+                try:
+                    ControladorDeObjeto.crearObjeto(clase)
+                    continue
+                except:
+                    print('Algun dato no fue valido, revis la entrada')

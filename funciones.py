@@ -23,10 +23,12 @@ def  validacionEntera(texto, l1, l2):
 def crearBases():
     
     nombresClases = ['SectorAgricola','EmpresaTecnologia']
-
     clases = bd.BaseDeDatos('BaseClases',['nombre'])
-    for clase in nombresClases:
-        clases.agregarDatos('BaseClases', [clase])
-        
-    #sA.SectorAgricola().crearBase()
-    eT.EmpresaTecnologia()
+    try:
+        bd.BaseDeDatos.comprobarDato('BaseClases', 'nombre', 'EmpresaTecnologia')
+    except:  
+        for clase in nombresClases:
+           clases.agregarDatos('BaseClases', [clase], ['nombre'])
+            
+    tec = eT.EmpresaTecnologia()
+    tec.crearPrevios()
