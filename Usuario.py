@@ -16,9 +16,9 @@ class Usuario():
         return cls.listaArgumentos
 
     @classmethod
-    def regresarObjeto(cls, nombreObjeto):
+    def regresarObjeto(cls,argumento, nombreObjeto):
         for objeto in cls._listaObjetos:
-            if objeto.nombreDeUsuario == nombreObjeto:
+            eval('if objeto.'+argumento+' == nombreObjeto':
                 return objeto
 
     @classmethod
