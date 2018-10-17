@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 from BaseDeDatos import BaseDeDatos
-#import Ubicacion as Ubicacion
-#import RedesSociales as RedesSociales
-#import ActividadEconomica as ActividadEconomica
-#import Empresa as Empresa
+from Ubicacion import Ubicacion
+from RedesSociales import RedesSociales
+from ActividadEconomica import ActividadEconomica
+from Empresa import Empresa
 from Usuario import Usuario
-#import Buscador as Buscador
-#import MenuBusqueda as MenuBusqueda
-#import CuentaAdministrador as CuentaAdministrador
-#import InformacionDeLaEmpresa as InformacionDeLaEmpresa
-#import Estadisticas as Estadisticas
-#import Cliente as Cliente
-#import Opiniones as Opiniones
-#import Fundaciones as Fundaciones
-#import Capital as Capital
-#import Departamentos as Departamentos
-#import ImagenesYVideo as ImagenesYVideo
-#import Instalaciones as Instalaciones
-#import LideresEmpresariales as LideresEmpresariales
+from Buscador import Buscador
+from MenuBusqueda import MenuBusqueda
+from CuentaAdministrador import CuentaAdministrador
+from InformacionDeLaEmpresa import InformacionDeLaEmpresa
+from Estadisticas import Estadisticas
+from Cliente import Cliente
+from Opiniones import Opiniones
+from Fundaciones import Fundaciones
+from Capital import Capital
+from Departamentos import Departamentos
+from ImagenesYVideo import ImagenesYVideo
+from Instalaciones import Instalaciones
+from LideresEmpresariales import LideresEmpresariales
 
 
 class ControladorDeObjeto():
