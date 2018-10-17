@@ -11,9 +11,10 @@ class Cliente():
         return cls.listaArgumentos
 
     @classmethod
-    def regresarObjeto(cls, nombreObjeto):
+    def regresarObjeto(cls,argumento, nombreObjeto):
         for objeto in cls._listaObjetos:
-            if objeto.Nombre == nombreObjeto:
+            cadena = eval('objeto.'+argumento)
+            if cadena == nombreObjeto:
                 return objeto
 
     @classmethod
