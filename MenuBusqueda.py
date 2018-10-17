@@ -6,24 +6,70 @@ class Menu():
     _listarObjetos = []
 
     @classmethod
-    def listarObjetos(cls, self):
-        cls.listarObjetos.append(self.Empresas,self.Sectores,self.BusquedaEmpresarial,self.BusquedaEspecializada,self.CalificaciondeServicios,self.IniciarSesion,self.MasBuscados,self.BusquedaGeografica,self.Imagenes)
+
+    def regresarArgumentos(cls):
+        return cls.listaArgumentos
+
+    @classmethod
+    def regresarObjeto(cls, nombreObjeto):
+        for objeto in cls._listaObjetos:
+            if objeto.Empresas == nombreObjeto:
+                return objeto
+
+    @classmethod
+    def eliminarObjeto(cls, objet):
+        for objeto in cls._listaObjetos:
+            if objeto == objet:
+                cls._listaObjetos.remove(objet)
+    
+    @classmethod
+    def editarArgumento(cls, argumento, objeto, dato):
+        if argumento == 'Empresas':
+            for obj in cls._listaObjetos:
+                if obj == objeto:
+                    cls._listaObjetos[cls._listaObjetos.index(obj)].Empresas = dato
+
+    @staticmethod
+    def crearPrevios():
+        listas = BaseDeDatos.obtenerDatosTotales('Empresas')
+        for lista in listas:
+            Menu(lista)
+
+    def listarObjetos(cls, objeto):
+        cls.listarObjetos.append(objeto)
 
     def crearBase():
-        BaseDeDatos('Menu',listaArgumentos)
+        BaseDeDatos('Menu',self.listaArgumentos)
 
-    def __init__(self):
+    def __init__(self, modo = None):
+
+        if modo == 1;
         
 
-        self.Empresas = input('Listado de Empresas', end = '')
-        self.Sectores = input('Empresas por Sector Economico', end = '')
-        self.BusquedaEmpresarial = input('Busqueda Empresarial', end = '')
-        self.BusquedaEspecializada = input('Busqueda Especializada', end = '')
-        self.CalificaciondeServicios = input('Listado de Calificacion de Servicios', end = '')
-        self.IniciarSesion = input('Inicio de Sesion', end = '')
-        self.MasBuscados = input('Mas Buscados', end = '')
-        self.Busquedageografica = input('Busqueda Geografica', end = '')
-        self.Imagenes = input('Imagenes', end = '')
+            self.Empresas = input('Listado de Empresas ')
+            self.Sectores = input('Empresas por Sector Economico ')
+            self.BusquedaEmpresarial = input('Busqueda Empresarial ')
+            self.BusquedaEspecializada = input('Busqueda Especializada ')
+            self.CalificaciondeServicios = input('Listado de Calificacion de Servicios ')
+            self.IniciarSesion = input('Inicio de Sesion ')
+            self.MasBuscados = input('Mas Buscados ')
+            self.Busquedageografica = input('Busqueda Geografica ')
+            self.Imagenes = input('Imagenes ')
+            BaseDeDatos.agregarDatos('Menu', [self.Empresas,self.Sectores,self.BusquedaEmpresarial,self.BusquedaEspecializada,self.CalificaciondeServicios,self.IniciarSesion,self.MasBuscados,self.BusquedaGeografica,self.Imagenes], self.listaArgumentos)
 
         
-        BaseDeDatos.agregarDatos('Menu', [self.Empresas,self.Sectores,self.BusquedaEmpresarial,self.BusquedaEspecializada,self.CalificaciondeServicios,self.IniciarSesion,self.MasBuscados,self.BusquedaGeografica,self.Imagenes])
+        else modo != None:
+
+            self.Empresas = modo [0]
+            self.Sectores = modo [1]
+            self.BusquedaEmpresarial = modo [2]
+            self.BusquedaEspecializada = modo [3]
+            self.CalificaciondeServicios = modo [4]
+            self.IniciarSesion = modo [5]
+            self.MasBuscados = modo [6]
+            self.Busquedageografica = modo [7]
+            self.Imagenes = modo [8]
+            self.listarObjetos(self)
+
+        else:
+            self.crearBase()
