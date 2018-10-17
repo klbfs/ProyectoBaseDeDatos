@@ -41,7 +41,6 @@ class Menu():
                 except:
                     print("Objeto no encontrado")
             
-            #Lista la busqueda
             if seleccion == 3:
                 try: 
                     ControladorDeObjeto.buscaObjeto(clase)
@@ -54,4 +53,4 @@ class Menu():
                     ControladorDeObjeto.crearObjeto(clase)
                     continue
                 except:
-                    print('Algun dato no fue valido, revis la entrada')
+                    print('Algun dato no fue valido, revisa la entrada')

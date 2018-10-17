@@ -5,8 +5,7 @@ class Ubicacion():
     listaArgumentos = ['Pais', 'Estado', 'Municipio', 'Localidad', 'Calle', 'Numero', 'CodigoPostal', 'CoordenadasGeograficas','Sucursales','AreaGeografica']
     _listarObjetos = []
 
-@classmethod
-
+    @classmethod
     def regresarArgumentos(cls):
         return cls.listaArgumentos
 
@@ -31,19 +30,19 @@ class Ubicacion():
 
     @staticmethod
     def crearPrevios():
-        listas = BaseDeDatos.obtenerDatosTotales('Pais')
+        listas = BaseDeDatos.obtenerDatosTotales('Ubicacion')
         for lista in listas:
             Ubicacion(lista)
 
     def listarObjetos(cls, objeto):
         cls.listarObjetos.append(objeto)
 
-    def crearBase():
+    def crearBase(self):
         BaseDeDatos('Ubicacion',self.listaArgumentos)
 
     def __init__(self, modo = None):
 
-        if modo == 1;
+        if modo == 1:
         
 
             self.Pais = input('Pais de Origen ')
@@ -58,7 +57,7 @@ class Ubicacion():
             self.AreaGeografica = input('Area Geografica comercial ')
             BaseDeDatos.agregarDatos('Ubicacion', [self.Pais,self.Estado,self.Municipio,self.Localidad,self.Calle,self.Numero,self.CodigoPostal,self.CoordenadasGeograficas,self.Sucursales,self.AreaGeografica], self.listaArgumentos)
 
-        else modo != None:
+        elif modo != None:
 
             self.Pais = modo [0]
             self.Estado = modo [1]

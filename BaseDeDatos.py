@@ -29,7 +29,7 @@ class BaseDeDatos():
         
         sql = """
         CREATE TABLE IF NOT EXISTS %s(
-        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        no INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         %s)""" %(self.nombreBase, sqlTerm)
         
         consulta.execute(sql)
@@ -73,6 +73,7 @@ class BaseDeDatos():
         consulta.close()
         conexion.commit()
         conexion.close()
+
     def obtenerDatosTotales(base):
         conexion = sqlite3.connect(base+'.sqlite3')
         consulta = conexion.cursor()

@@ -18,7 +18,8 @@ class Usuario():
     @classmethod
     def regresarObjeto(cls,argumento, nombreObjeto):
         for objeto in cls._listaObjetos:
-            eval('if objeto.'+argumento+' == nombreObjeto':
+            cadena = eval('objeto.'+argumento)
+            if cadena == nombreObjeto: 
                 return objeto
 
     @classmethod
@@ -38,7 +39,7 @@ class Usuario():
     def crearPrevios():
         listas = BaseDeDatos.obtenerDatosTotales('Usuario')
         for lista in listas:
-            EmpresaTecnologia(lista)
+            Usuario(lista)
 
     @classmethod
     def listarObjetos(cls, objeto):
