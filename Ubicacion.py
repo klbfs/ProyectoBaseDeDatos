@@ -10,11 +10,12 @@ class Ubicacion():
         return cls.listaArgumentos
 
     @classmethod
-    def regresarObjeto(cls, nombreObjeto):
+    def regresarObjeto(cls,argumento, nombreObjeto):
         for objeto in cls._listaObjetos:
-            if objeto.Pais == nombreObjeto:
+            cadena = eval('objeto.'+argumento)
+            if cadena == nombreObjeto:
                 return objeto
-
+            
     @classmethod
     def eliminarObjeto(cls, objet):
         for objeto in cls._listaObjetos:
