@@ -11,9 +11,10 @@ class Departamentos():
         return cls.listaArgumentos
 
     @classmethod
-    def regresarObjeto(cls, nombreObjeto):
+    def regresarObjeto(cls,argumento, nombreObjeto):
         for objeto in cls._listaObjetos:
-            if objeto.NumerodeEmpleados == nombreObjeto:
+            cadena = eval('objeto.'+argumento)
+            if cadena == nombreObjeto:
                 return objeto
 
     @classmethod

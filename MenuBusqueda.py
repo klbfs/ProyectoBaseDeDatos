@@ -1,6 +1,6 @@
 from BaseDeDatos import BaseDeDatos 
 
-class Menu():
+class MenuBusqueda():
     
     listaArgumentos = ['Empresas','Sectores','BusquedaEmpresarial','BusquedaEspecializada','CalificaciondeServicios','IniciarSesion', 'MasBuscados', 'BusquedaGeografica','Imagenes']
     _listarObjetos = []
@@ -11,9 +11,10 @@ class Menu():
         return cls.listaArgumentos
 
     @classmethod
-    def regresarObjeto(cls, nombreObjeto):
+    def regresarObjeto(cls,argumento, nombreObjeto):
         for objeto in cls._listaObjetos:
-            if objeto.Empresas == nombreObjeto:
+            cadena = eval('objeto.'+argumento)
+            if cadena == nombreObjeto:
                 return objeto
 
     @classmethod
@@ -33,13 +34,13 @@ class Menu():
     def crearPrevios():
         listas = BaseDeDatos.obtenerDatosTotales('Empresas')
         for lista in listas:
-            Menu(lista)
+            MenuBusqueda(lista)
 
     def listarObjetos(cls, objeto):
         cls.listarObjetos.append(objeto)
 
     def crearBase():
-        BaseDeDatos('Menu',self.listaArgumentos)
+        BaseDeDatos('MenuBusqueda',self.listaArgumentos)
 
     def __init__(self, modo = None):
 
@@ -55,7 +56,7 @@ class Menu():
             self.MasBuscados = input('Mas Buscados ')
             self.Busquedageografica = input('Busqueda Geografica ')
             self.Imagenes = input('Imagenes ')
-            BaseDeDatos.agregarDatos('Menu', [self.Empresas,self.Sectores,self.BusquedaEmpresarial,self.BusquedaEspecializada,self.CalificaciondeServicios,self.IniciarSesion,self.MasBuscados,self.BusquedaGeografica,self.Imagenes], self.listaArgumentos)
+            BaseDeDatos.agregarDatos('MenuBusqueda', [self.Empresas,self.Sectores,self.BusquedaEmpresarial,self.BusquedaEspecializada,self.CalificaciondeServicios,self.IniciarSesion,self.MasBuscados,self.BusquedaGeografica,self.Imagenes], self.listaArgumentos)
 
         
         else modo != None:
