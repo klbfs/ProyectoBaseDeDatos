@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 from BaseDeDatos import BaseDeDatos
-from Ubicacion import Ubicacion
-from RedesSociales import RedesSociales
-from ActividadEconomica import ActividadEconomica
-from Empresa import Empresa
+#from Ubicacion import Ubicacion
+#from RedesSociales import RedesSociales
+#from ActividadEconomica import ActividadEconomica
+#from Empresa import Empresa
 from Usuario import Usuario
-from Buscador import Buscador
-from MenuBusqueda import MenuBusqueda
-from CuentaAdministrador import CuentaAdministrador
-from InformacionDeLaEmpresa import InformacionDeLaEmpresa
-from Estadisticas import Estadisticas
-from Cliente import Cliente
-from Opiniones import Opiniones
-from Fundaciones import Fundaciones
-from Capital import Capital
-from Departamentos import Departamentos
-from ImagenesYVideo import ImagenesYVideo
-from Instalaciones import Instalaciones
-from LideresEmpresariales import LideresEmpresariales
+#from Buscador import Buscador
+#from MenuBusqueda import MenuBusqueda
+#from CuentaAdministrador import CuentaAdministrador
+#from InformacionDeLaEmpresa import InformacionDeLaEmpresa
+#from Estadisticas import Estadisticas
+#from Cliente import Cliente
+#from Opiniones import Opiniones
+#from Fundaciones import Fundaciones
+#from Capital import Capital
+#from Departamentos import Departamentos
+#from ImagenesYVideo import ImagenesYVideo
+#from Instalaciones import Instalaciones
+#from LideresEmpresariales import LideresEmpresariales
 
 
 class ControladorDeObjeto():
@@ -48,9 +48,6 @@ class ControladorDeObjeto():
                 BaseDeDatos.borrarDatos(clase,argumento, nombreObjeto)
                 nombreObjeto = eval(clase+'.regresarObjeto(argumento,nombreObjeto)')
                 eval(clase+'.eliminarObjeto(nombreObjeto)')
-
-        
-
 
     def editarObjeto(clase):
         nombresClases = ['Ubicacion','RedesSociales','ActividadEconomica','Empresa','Usuario','Buscador','MenuBusqueda','CuentaAdministrador','InformacionDeLaEmpresa','Estadisticas','Cliente','Opiniones','Fundaciones','Capital','Departamentos','ImagenesYVideo','Instalaciones','LideresEmpresariales']
