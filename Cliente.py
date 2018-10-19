@@ -25,10 +25,11 @@ class Cliente():
     
     @classmethod
     def editarArgumento(cls, argumento, objeto, dato):
-        if argumento == 'Nombre':
-            for obj in cls._listaObjetos:
-                if obj == objeto:
-                    cls._listaObjetos[cls._listaObjetos.index(obj)].Nombre = dato
+       for arg in cls.listaArgumentos:
+                if argumento == arg:
+                    for obj in cls._listaObjetos:
+                        if obj == objeto:
+                            eval('cls._listaObjetos[cls._listaObjetos.index(obj)].'+argumento+' = dato')
 
     @staticmethod
     def crearPrevios():
