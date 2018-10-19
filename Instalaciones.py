@@ -65,7 +65,7 @@ class Instalaciones():
             self.listarObjetos(self)
             BaseDeDatos.agregarDatos('Instalaciones', [self.centroDeDistribucion,self.centroDeProduccion,self.manufactura,self.ensamble,self.centroDeInvestigacion,self.centroDeServicios,self.atencionAClientes,self.sucursales,self.sedes,self.almacenes], self.listaArgumentos)
         elif modo != None:
-             self.centroDeDistribucion = modo[0]
+            self.centroDeDistribucion = modo[0]
             self.centroDeProduccion = modo[1]
             self.manufactura = modo[2]
             self.ensamble = modo[3]
