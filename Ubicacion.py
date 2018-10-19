@@ -1,13 +1,13 @@
 """
 Created on Tue Aug 28 20:42:43 2018
 
-@author: yocoy
+@author: Fernando
 """
 from BaseDeDatos import BaseDeDatos 
 
 class Ubicacion():
     
-    listaArgumentos = ['pais', 'estado', 'municipio', 'localidad', 'calle', 'numero', 'codigoPostal', 'coordenadasGeograficas','sucursales','areaGeografica']
+    listaArgumentos = ['Pais', 'Estado', 'Municipio', 'Localidad', 'Calle', 'Numero', 'CodigoPostal', 'CoordenadasGeograficas','Sucursales','AreaGeografica']
     _listarObjetos = []
 
     @classmethod
@@ -18,7 +18,7 @@ class Ubicacion():
     def regresarObjeto(cls,argumento, nombreObjeto):
         for objeto in cls._listaObjetos:
             cadena = eval('objeto.'+argumento)
-            if cadena == nombreObjeto: 
+            if cadena == nombreObjeto:
                 return objeto
 
     @classmethod
@@ -39,45 +39,44 @@ class Ubicacion():
     def crearPrevios():
         listas = BaseDeDatos.obtenerDatosTotales('Ubicacion')
         for lista in listas:
-            Usuario(lista)
+            Ubicacion(lista)
 
     @classmethod
     def listarObjetos(cls, objeto):
-        cls._listaObjetos.append(objeto)
+        cls.listaObjetos.append(objeto)
 
     def crearBase(self):
         BaseDeDatos('Ubicacion',self.listaArgumentos)
-
 
     def __init__(self, modo = None):
 
         if modo == 1:
         
 
-            self.pais = input('Pais de Origen ')
-            self.estado = input('Estado ')
-            self.municipio = input('Municipio ')
-            self.localidad = input('Localidad ')
-            self.calle = input('Calle ')
-            self.numero = input('Numero Exterior ')
-            self.codigoPostal = input('Codigo Postal ')
-            self.coordenadasGeograficas = input('Coordenada Geograficas de Sede ')
-            self.sucursales = input('Direccion de Sucursales ')
-            self.areaGeografica = input('Area Geografica comercial ')
-            BaseDeDatos.agregarDatos('Ubicacion', [self.pais,self.estado,self.municipio,self.localidad,self.calle,self.numero,self.nodigoPostal,self.coordenadasGeograficas,self.sucursales,self.areaGeografica], self.listaArgumentos)
+            self.Pais = input('Pais de Origen ')
+            self.Estado = input('Estado ')
+            self.Municipio = input('Municipio ')
+            self.Localidad = input('Localidad ')
+            self.Calle = input('Calle ')
+            self.Numero = input('Numero Exterior ')
+            self.CodigoPostal = input('Codigo Postal ')
+            self.CoordenadasGeograficas = input('Coordenada Geograficas de Sede ')
+            self.Sucursales = input('Direccion de Sucursales ')
+            self.AreaGeografica = input('Area Geografica comercial ')
+            BaseDeDatos.agregarDatos('Ubicacion', [self.Pais,self.Estado,self.Municipio,self.Localidad,self.Calle,self.Numero,self.CodigoPostal,self.CoordenadasGeograficas,self.Sucursales,self.AreaGeografica], self.listaArgumentos)
 
         elif modo != None:
 
-            self.pais = modo [0]
-            self.estado = modo [1]
-            self.municipio = modo [2]
-            self.localidad = modo [3]
-            self.calle = modo [4]
-            self.numero = modo [5]
-            self.codigoPostal = modo [6]
-            self.coordenadasGeograficas = modo [7]
-            self.sucursales = modo [8]
-            self.areaGeografica = modo [9]
+            self.Pais = modo [0]
+            self.Estado = modo [1]
+            self.Municipio = modo [2]
+            self.Localidad = modo [3]
+            self.Calle = modo [4]
+            self.Numero = modo [5]
+            self.CodigoPostal = modo [6]
+            self.CoordenadasGeograficas = modo [7]
+            self.Sucursales = modo [8]
+            self.AreaGeografica = modo [9]
             self.listarObjetos(self)
 
         else:
