@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 28 20:42:43 2018
+
+@author: Fernando
+"""
 from BaseDeDatos import BaseDeDatos 
 
 class Cliente():
@@ -6,7 +12,6 @@ class Cliente():
     _listarObjetos = []
 
     @classmethod
-
     def regresarArgumentos(cls):
         return cls.listaArgumentos
 
@@ -33,19 +38,20 @@ class Cliente():
 
     @staticmethod
     def crearPrevios():
-        listas = BaseDeDatos.obtenerDatosTotales('Nombre')
+        listas = BaseDeDatos.obtenerDatosTotales('Cliente')
         for lista in listas:
             Cliente(lista)
 
+    @classmethod
     def listarObjetos(cls, objeto):
-        cls.listarObjetos.append(objeto)
+        cls.listaObjetos.append(objeto)
 
-    def crearBase():
+    def crearBase(self):
         BaseDeDatos('Cliente',self.listaArgumentos)
 
     def __init__(self, modo = None):
 
-        if modo == 1;
+        if modo == 1:
 
 
             self.Edad=input('Edad')
@@ -58,7 +64,7 @@ class Cliente():
             
             BaseDeDatos.agregarDatos('Cliente', [self.Edad,self.EstadoSocieconomico,self.EstadoCivil,self.Intereses,self.Genero,self.DatosdeContacto,self.Nombre], self.listaArgumentos)
        
-        else modo != None:
+        elif modo != None:
 
             self.Edad= modo [0]
             self.EstadoSocieconomico= modo [1]
