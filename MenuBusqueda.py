@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 28 20:42:43 2018
+
+@author: Fernando
+"""
 from BaseDeDatos import BaseDeDatos 
 
 class MenuBusqueda():
@@ -6,7 +12,6 @@ class MenuBusqueda():
     _listarObjetos = []
 
     @classmethod
-
     def regresarArgumentos(cls):
         return cls.listaArgumentos
 
@@ -33,19 +38,20 @@ class MenuBusqueda():
 
     @staticmethod
     def crearPrevios():
-        listas = BaseDeDatos.obtenerDatosTotales('Empresas')
+        listas = BaseDeDatos.obtenerDatosTotales('MenuBusqueda')
         for lista in listas:
             MenuBusqueda(lista)
 
+    @classmethod
     def listarObjetos(cls, objeto):
-        cls.listarObjetos.append(objeto)
+        cls.listaObjetos.append(objeto)
 
-    def crearBase():
+    def crearBase(self):
         BaseDeDatos('MenuBusqueda',self.listaArgumentos)
 
     def __init__(self, modo = None):
 
-        if modo == 1;
+        if modo == 1:
         
 
             self.Empresas = input('Listado de Empresas ')
@@ -60,7 +66,7 @@ class MenuBusqueda():
             BaseDeDatos.agregarDatos('MenuBusqueda', [self.Empresas,self.Sectores,self.BusquedaEmpresarial,self.BusquedaEspecializada,self.CalificaciondeServicios,self.IniciarSesion,self.MasBuscados,self.BusquedaGeografica,self.Imagenes], self.listaArgumentos)
 
         
-        else modo != None:
+        elif modo != None:
 
             self.Empresas = modo [0]
             self.Sectores = modo [1]
