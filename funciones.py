@@ -12,7 +12,7 @@ import BaseDeDatos as bd
 import Usuario as us
 #import Buscador as bus
 #import MenuBusqueda as mb
-#import CuentaAdministrador as ca
+import CuentaAdministrador as ca
 #import InformacionDeLaEmpresa as ide
 #import Estadisticas as es
 #import Cliente as cl
@@ -60,8 +60,8 @@ def crearBases():
 #    #busc.crearPrevios()
  #   men = mb.MenuBusqueda()
   #  mb.crearPrevios()
-   # admin = ca.CuentaAdministrador()
-    #admin.crearPrevios()
+    admin = ca.CuentaAdministrador()
+    admin.crearPrevios()
     #info = ide.InformacionDeLaEmpresa()
 #    info.crearPrevios()
  #   esta = es.Estadisticas()

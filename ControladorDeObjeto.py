@@ -7,7 +7,7 @@ from BaseDeDatos import BaseDeDatos
 from Usuario import Usuario
 #from Buscador import Buscador
 #from MenuBusqueda import MenuBusqueda
-#from CuentaAdministrador import CuentaAdministrador
+from CuentaAdministrador import CuentaAdministrador
 #from InformacionDeLaEmpresa import InformacionDeLaEmpresa
 #from Estadisticas import Estadisticas
 #from Cliente import Cliente
