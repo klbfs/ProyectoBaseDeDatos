@@ -6,7 +6,7 @@ Created on Tue Aug 28 20:42:43 2018
 """
 from BaseDeDatos import BaseDeDatos 
 
-class imagenesYvideo():
+class ImagenesYVideo():
     
     listaArgumentos = ['imagenesYvideo','fotosDellugar','logotipo','productos','publicidad','tiposDepublicidad','simulacionDelproductooservicio','conferencias','videosInformativos']
     _listaObjetos = []
@@ -38,7 +38,7 @@ class imagenesYvideo():
 
     @staticmethod
     def crearPrevios():
-        listas = BaseDeDatos.obtenerDatosTotales('imagenesYvideo')
+        listas = BaseDeDatos.obtenerDatosTotales('ImagenesYVideo')
         for lista in listas:
             imagenesYvideo(lista)
 
@@ -47,7 +47,7 @@ class imagenesYvideo():
         cls._listaObjetos.append(objeto)
 
     def crearBase(self):
-        BaseDeDatos('imagenesYvideo',self.listaArgumentos)
+        BaseDeDatos('ImagenesYVideo',self.listaArgumentos)
 
     def __init__(self, modo = None):
         
@@ -62,7 +62,7 @@ class imagenesYvideo():
             self.conferencias = input('conferencias: ')
             self.videosInformativos = input('videos informativos: ')
             self.listarObjetos(self)
-            BaseDeDatos.agregarDatos('imagenesYvideo', [self.imagenesYvideo,self.fotosDellugar,self.logotipo,self.productos,self.publicidad,self.tiposDepublicidad,self.simulacionDelproductooservicio,self.conferencias,self.videosInformativos], self.listaArgumentos)
+            BaseDeDatos.agregarDatos('ImagenesYVideo', [self.imagenesYvideo,self.fotosDellugar,self.logotipo,self.productos,self.publicidad,self.tiposDepublicidad,self.simulacionDelproductooservicio,self.conferencias,self.videosInformativos], self.listaArgumentos)
         elif modo != None:
             self.imagenesYvideo = modo[0]
             self.fotosDellugar = modo[1]

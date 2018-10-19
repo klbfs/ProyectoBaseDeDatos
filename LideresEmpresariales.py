@@ -2,7 +2,7 @@ from BaseDeDatos import BaseDeDatos
 
 class LideresEmpresariales():
     
-    listaArgumentos = ['CEO','CTO','MesaDirectiva','JefeDepartamento','Empresa','Presidente','AccionistasMayoritarios']
+    listaArgumentos = ['ceo','cto','mesaDirectiva','jefeDepartamento','empresa','presidente','accionistasMayoritarios']
     _listaObjetos = []
 
     @classmethod
@@ -46,23 +46,23 @@ class LideresEmpresariales():
     def __init__(self, modo = None):
         
         if modo == 1:
-            self.CEO = input('Nombre de Usuario: ')
-            self.CTO = input('id: ')
-            self.MesaDirectiva = input('Password: ')
-            self.JefeDepartamento = input('Correo: ')
-            self.Empresa = input('Intereses: ')
-            self.Presidente = input('Ocupacion: ')
-            self.AccionistasMayoritarios = input('Descripcion: ')
+            self.ceo = input('CEO: ')
+            self.cto = input('CTO: ')
+            self.mesaDirectiva = input('Mesa Directiva: ')
+            self.jefeDepartamento = input('Jefe Departamento: ')
+            self.empresa = input('Empresa: ')
+            self.presidente = input('Presidente: ')
+            self.accionistasMayoritarios = input('Accionistas Mayoritarios: ')
             self.listarObjetos(self)
-            BaseDeDatos.agregarDatos('LideresEmpresariales', [self.CEO,self.CTO,self.MesaDirectiva,self.JefeDepartamento,self.Empresa,self.Presidente,self.AccionistasMayoritarios], self.listaArgumentos)
+            BaseDeDatos.agregarDatos('LideresEmpresariales', [self.ceo,self.cto,self.mesaDirectiva,self.jefeDepartamento,self.empresa,self.presidente,self.accionistasMayoritarios], self.listaArgumentos)
         elif modo != None:
-            self.CEO = modo[0]
-            self.CTO = modo[1]
-            self.MesaDirectiva = modo[2]
-            self.JefeDepartamento = modo[3]
-            self.Empresa = modo[4]
-            self.Presidente = modo[5]
-            self.AccionistasMayoritarios = modo[6]
+            self.ceo = modo[0]
+            self.cto = modo[1]
+            self.mesaDirectiva = modo[2]
+            self.jefeDepartamento = modo[3]
+            self.empresa = modo[4]
+            self.presidente = modo[5]
+            self.accionistasMayoritarios = modo[6]
             self.listarObjetos(self)
         else:
             self.crearBase()

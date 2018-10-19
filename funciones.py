@@ -14,15 +14,15 @@ import Buscador as bus
 import MenuBusqueda as mb
 import CuentaAdministrador as ca
 import InformacionDeLaEmpresa as ide
-#import Estadisticas as es
+import Estadisticas as es
 import Cliente as cl
 import Opiniones as op
 import Fundaciones as fu
 import Capital as cap
 import Departamentos as dep
-import imagenesYvideo as iyv
+import ImagenesYVideo as iyv
 import Instalaciones as ins
-#import LideresEmpresariales as le
+import LideresEmpresariales as le
 
 def  validacionEntera(texto, l1, l2):
     while True:
@@ -64,8 +64,8 @@ def crearBases():
     admin.crearPrevios()
     info = ide.InformacionDeLaEmpresa()
     info.crearPrevios()
-    #esta = es.Estadisticas()
-    #esta.crearPrevios()
+    esta = es.Estadisticas()
+    esta.crearPrevios()
     client = cl.Cliente()
     client.crearPrevios()
     opi = op.Opiniones()
@@ -76,9 +76,9 @@ def crearBases():
     capi.crearPrevios()
     depart = dep.Departamentos()
     depart.crearPrevios()
-    image = iyv.imagenesYvideo()
+    image = iyv.ImagenesYVideo()
     image.crearPrevios()
     instal = ins.Instalaciones()
     instal.crearPrevios()
-    #lid = le.LideresEmpresariales()
-    #lid.crearPrevios()
+    lid = le.LideresEmpresariales()
+    lid.crearPrevios()
